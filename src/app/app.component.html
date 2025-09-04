@@ -1,0 +1,65 @@
+<h1>The Api Details are as follows: </h1>
+
+<!-- <h2>{{users}}</h2> -->
+
+@for (user of users; track user.id) 
+{
+  <h2>{{user.name}}</h2>
+}
+
+<hr>
+
+<h1>This is for POST api request</h1>
+
+<h2>Fill out the below details for POST request api</h2>
+
+<form #userForm="ngForm" (ngSubmit)="formSubmit(userForm.value)">
+  
+  <input type="text" name="userName"  [(ngModel)]="userName" placeholder="Enter Name">
+  <br><br>
+  <button>Submit details</button>
+</form>
+
+<h2>Api form - ngModel (Just one way binding)</h2>
+
+<form action="post" #userForm1="ngForm" (ngSubmit)="formSubmit1(userForm1.value)">
+  The id is : <input type="number" value="{{idValue+1}}" disabled name="id" ngModel>
+  <br><br>
+  <input type="text" placeholder="Enter Name" name="userName1" ngModel>
+  <br><br>
+  <button>Submit Details</button>
+</form>
+
+<hr>
+
+<h1>This is Update API request</h1>
+
+<form action="post" #updateIntoUserForm="ngForm" (ngSubmit)="updateValue(updateIntoUserForm.value)">
+
+  <input type="number" placeholder="Enter the value of id whose changes need to be done" name="userId" ngModel>
+  <br><br>
+  <button>Submit Id</button>  
+</form>
+
+@if (valueNeedToUpdate) 
+  {
+    <h2>Id: {{valueNeedToUpdate.id}}</h2>
+    <h2>Name: {{valueNeedToUpdate.name}}</h2>
+
+    <button (click)="updateUserDetails(1)">Update Details</button>
+    <button (click)="deleteUser()">Delete User</button>
+
+    @if (flagValue==1) 
+    {
+      <form action="post" #updateUserDetails="ngForm" (ngSubmit)="setUserDetails(updateUserDetails.value)">
+        Id:<input type="text" name="id" [(ngModel)]="valueNeedToUpdate.id" disabled>
+        <br><br>
+        Name: <input type="text" name="name" [(ngModel)]="valueNeedToUpdate.name">
+        <br><br>
+        <button>Set User Details</button>
+      </form>
+    }
+  }
+
+
+  

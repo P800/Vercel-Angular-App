@@ -1,0 +1,94 @@
+/* You can add global styles to this file, and also import other style files */
+/* General Layout */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 20px;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* Headings */
+h1 {
+  color: #2c3e50;
+  font-size: 2rem;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 5px;
+}
+
+h2 {
+  color: #34495e;
+  font-size: 1.4rem;
+  margin: 10px 0;
+}
+
+/* Forms */
+form {
+  background-color: #ffffff;
+  padding: 20px;
+  margin-bottom: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  max-width: 600px;
+  width: 100%;
+}
+
+/* Inputs */
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+/* Buttons */
+button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  form {
+    padding: 15px;
+  }
+
+  input[type="text"],
+  input[type="number"] {
+    font-size: 0.95rem;
+  }
+
+  button {
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+
+/* Divider */
+hr {
+  border: none;
+  border-top: 2px dashed #ccc;
+  margin: 30px 0;
+}
